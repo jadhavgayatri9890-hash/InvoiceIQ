@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | InvoiceIQ</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+
+  <header class="login-navbar">
+    <a href="index.html" class="logo">Invoice<span>IQ</span></a>
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </header>
+
+  <main class="login-container">
+
+    <section class="login-info">
+      <div class="eyebrow"><span class="status-dot"></span> AI-POWERED INVOICE INTELLIGENCE</div>
+
+      <h1>Make every invoice<br>
+        <span>smarter with AI.</span>
+      </h1>
+
+      <p class="info-text">
+        InvoiceIQ helps simplify invoice analysis, identify important details
+        and deliver clear, explainable verification insights.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue-icon">✦</div>
+          <h3>Smart Invoice Analysis</h3>
+          <p>Understand invoice data with intelligent analysis.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon purple-icon">⌕</div>
+          <h3>AI-Powered Verification</h3>
+          <p>Review invoice details with AI-assisted checks.</p>
+        </div>
+
+        <div class="feature-card feature-card-wide">
+          <div class="feature-icon cyan-icon">◈</div>
+          <div>
+            <h3>Explainable Insights</h3>
+            <p>Get clear results that are easier to understand.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="workflow-card">
+        <div class="workflow-heading">
+          <span class="workflow-symbol">✧</span>
+          <span>HOW INVOICEIQ WORKS</span>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <span class="step-number">01</span>
+            <span>Upload</span>
+          </div>
+
+          <span class="step-arrow">→</span>
+
+          <div class="workflow-step">
+            <span class="step-number">02</span>
+            <span>Analyse</span>
+          </div>
+
+          <span class="step-arrow">→</span>
+
+          <div class="workflow-step">
+            <span class="step-number">03</span>
+            <span>Verify</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-decoration decoration-one"></div>
+      <div class="visual-decoration decoration-two"></div>
+    </section>
+
+    <section class="login-card">
+      <div class="card-top-icon">✦</div>
+
+      <div class="form-heading">
+        <p class="eyebrow">YOUR WORKSPACE</p>
+        <h2 id="form-title">Sign In</h2>
+        <p id="form-subtitle">Enter your details to continue.</p>
+      </div>
+
+      <form id="auth-form">
+        <div class="form-group" id="name-group" hidden>
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name"
+                 placeholder="Enter your name" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email"
+                 placeholder="you@example.com"
+                 autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password"
+                 placeholder="Enter your password"
+                 autocomplete="current-password"
+                 minlength="6" required>
+        </div>
+
+        <p class="form-message" id="form-message" role="status"></p>
+
+        <button type="submit" class="submit-button" id="submit-button">
+          Sign In <span>→</span>
+        </button>
+      </form>
+
+      <p class="switch-text">
+        <span id="switch-label">Don't have an account?</span>
+        <button type="button" id="switch-mode">Create account</button>
+      </p>
+
+      <div class="secure-note">
+        <span>◇</span>
+        <p>InvoiceIQ · Intelligent invoice verification</p>
+      </div>
+
+      <p class="demo-note">
+        Frontend demo — backend authentication is not connected yet.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <span>InvoiceIQ</span>
+    <span>Smarter invoices. Clearer insights.</span>
+  </footer>
+
+</body>
+</html>

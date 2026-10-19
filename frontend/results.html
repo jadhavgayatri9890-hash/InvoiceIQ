@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Verification Results | InvoiceIQ</title>
+
+  <link rel="stylesheet" href="./results.css">
+  <script src="./results.js" defer></script>
+</head>
+<body>
+  <header class="results-navbar">
+    <a href="upload.html" class="brand">⬡ Invoice<span>IQ</span></a>
+    <a href="upload.html" class="back-link">← Back to Dashboard</a>
+  </header>
+
+  <main class="results-container">
+    <section class="page-heading">
+      <p class="eyebrow">INVOICE INTELLIGENCE</p>
+      <h1>Verification <span>Results</span></h1>
+      <p>Review invoice checks, extracted details and potential issues.</p>
+    </section>
+
+    <section class="file-summary">
+      <div class="document-icon">▤</div>
+      <div class="file-information">
+        <h2 id="result-file-name">No invoice selected</h2>
+        <p id="result-file-meta">Upload an invoice to begin.</p>
+      </div>
+      <span class="status-badge" id="overall-status">Not started</span>
+    </section>
+
+    <section class="progress-card">
+      <div class="section-title-row">
+        <div>
+          <h2>Verification Progress</h2>
+          <p id="progress-description">Waiting for an invoice.</p>
+        </div>
+        <strong id="progress-percent">0%</strong>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="steps">
+        <div class="step" id="step-upload">
+          <span>1</span>
+          <p>Uploaded</p>
+        </div>
+        <div class="step" id="step-extract">
+          <span>2</span>
+          <p>Data Extraction</p>
+        </div>
+        <div class="step" id="step-check">
+          <span>3</span>
+          <p>Invoice Checks</p>
+        </div>
+        <div class="step" id="step-complete">
+          <span>4</span>
+          <p>Results</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="checks-card">
+      <div class="section-title-row">
+        <div>
+          <h2>Innovation & Verification Checks</h2>
+          <p>Each check will show its result when real verification is connected.</p>
+        </div>
+      </div>
+
+      <div class="check-row">
+        <div class="check-icon">01</div>
+        <div class="check-content">
+          <h3>Invoice Data Extraction</h3>
+          <p>Read invoice number, date, vendor and total amount.</p>
+        </div>
+        <span class="check-status" id="check-extraction">Not run</span>
+      </div>
+
+      <div class="check-row">
+        <div class="check-icon">02</div>
+        <div class="check-content">
+          <h3>Duplicate Invoice Detection</h3>
+          <p>Identify invoices that may duplicate an existing record.</p>
+        </div>
+        <span class="check-status" id="check-duplicate">Not run</span>
+      </div>
+
+      <div class="check-row">
+        <div class="check-icon">03</div>
+        <div class="check-content">
+          <h3>Amount & Field Validation</h3>
+          <p>Check available invoice fields and arithmetic consistency.</p>
+        </div>
+        <span class="check-status" id="check-validation">Not run</span>
+      </div>
+
+      <div class="check-row">
+        <div class="check-icon">04</div>
+        <div class="check-content">
+          <h3>Unusual Data Detection</h3>
+          <p>Flag unusual values for further review when supported by the checks.</p>
+        </div>
+        <span class="check-status" id="check-anomaly">Not run</span>
+      </div>
+
+      <p class="demo-warning" id="demo-warning">
+        Demo interface only. No invoice has been verified yet.
+      </p>
+    </section>
+
+    <a href="upload.html" class="upload-again">↑ &nbsp; Upload Another Invoice</a>
+  </main>
+</body>
+</html>

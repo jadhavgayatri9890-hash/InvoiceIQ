@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Dashboard | InvoiceIQ</title>
+  <link rel="stylesheet" href="upload.css">
+  <script src="upload.js" defer></script>
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">⬡</span>
+        Invoice<span class="brand-blue">IQ</span>
+      </a>
+
+      <p class="menu-label">MENU</p>
+
+      <nav class="side-menu">
+        <a href="index.html" class="menu-item">
+          <span>⌂</span> Home
+        </a>
+        <a href="upload.html" class="menu-item active">
+          <span>⇧</span> Upload Invoice
+        </a>
+        <a href="#" class="menu-item" data-notice="Your invoice list will be available here.">
+          <span>▤</span> My Invoices
+        </a>
+        <a href="#" class="menu-item" data-notice="Verification history will be available here.">
+          <span>◷</span> Verification History
+        </a>
+        <a href="#" class="menu-item" data-notice="Settings will be available here.">
+          <span>⚙</span> Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon">?</span>
+          <strong>Need help?</strong>
+          <p>Have questions about invoice verification?</p>
+          <a href="mailto:support@example.com">Contact Support</a>
+        </div>
+        <a href="login.html" class="logout-link">↪ &nbsp; Log Out</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="search" id="dashboard-search"
+                 placeholder="Search invoices...">
+        </div>
+
+        <div class="profile-area">
+          <button class="notification-button" type="button"
+                  aria-label="Notifications">♧</button>
+          <div class="avatar">U</div>
+          <div class="profile-text">
+            <strong>Welcome, User</strong>
+            <span>InvoiceIQ Account</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="welcome-section">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h1>Invoice Dashboard</h1>
+          <p class="subtitle">
+            Manage your invoices and keep track of verification.
+          </p>
+        </div>
+        <a href="#upload-section" class="primary-button">+ Upload Invoice</a>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Total Uploaded</span>
+            <span class="stat-icon blue-icon">▤</span>
+          </div>
+          <h2 id="total-count">0</h2>
+          <p>Invoices selected in this session</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Verified</span>
+            <span class="stat-icon green-icon">✓</span>
+          </div>
+          <h2>—</h2>
+          <p>AI verification not connected</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-top">
+            <span>Pending Review</span>
+            <span class="stat-icon orange-icon">◷</span>
+          </div>
+          <h2 id="pending-count">0</h2>
+          <p>Awaiting verification setup</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+
+        <article class="upload-card" id="upload-section">
+          <div class="section-heading">
+            <div>
+              <h2>Upload New Invoice</h2>
+              <p>Choose an invoice file to get started.</p>
+            </div>
+            <span class="heading-icon">⇧</span>
+          </div>
+
+          <label for="invoice-file" class="drop-area" id="drop-area">
+            <div class="upload-symbol">↑</div>
+            <strong id="file-label">Drag your invoice here</strong>
+            <span class="drop-description">
+              or click below to browse files
+            </span>
+            <span class="browse-button">Browse Files</span>
+            <span class="file-types">Supported formats: PDF, PNG, JPG</span>
+          </label>
+
+          <input type="file" id="invoice-file"
+                 accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg"
+                 hidden>
+
+          <p id="file-message" class="file-message" role="status"></p>
+
+          <div class="upload-info">
+            <span>✦</span>
+            <p>
+              Your invoice will be prepared for verification.
+              AI analysis will be connected in a later step.
+            </p>
+          </div>
+
+          <button type="button" id="verify-button" class="verify-button">
+            Verify Invoice <span>→</span>
+          </button>
+
+          <p class="demo-note">
+            Frontend demo · No actual AI verification yet
+          </p>
+        </article>
+
+        <aside class="right-column">
+          <article class="announcement-card">
+            <span class="announcement-tag">INVOICEIQ</span>
+            <h2>Smarter invoice management.</h2>
+            <p>
+              Upload invoices and prepare them for a clearer,
+              more organized verification workflow.
+            </p>
+            <a href="#upload-section">Get Started →</a>
+            <div class="announcement-decoration"></div>
+          </article>
+
+          
+<article class="activity-card invoices-card">
+  <div class="invoices-heading">
+    <div>
+      <h2>My Invoices</h2>
+      <p>Track your uploaded invoices and their status.</p>
+    </div>
+    <span class="invoice-count" id="invoice-count">0 files</span>
+  </div>
+
+  <div class="invoice-table-wrap">
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>INVOICE</th>
+          <th>PROGRESS</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody id="invoice-list">
+        <tr id="invoice-empty-row">
+          <td colspan="3" class="empty-invoices">
+            No invoices uploaded yet.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
+</aside>
+</section>
+
+        </aside>
+
+      </section>
+
+      <footer class="dashboard-footer">
+        <span>© 2026 InvoiceIQ</span>
+        <span>Smarter invoices. Clearer insights.</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-notice]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(this.dataset.notice);
+      });
+    });
+  </script>
+
+</body>
+</html>
